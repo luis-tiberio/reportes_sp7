@@ -121,7 +121,7 @@ async def main():
             await page.goto("https://spx.shopee.com.br/")
             await page.wait_for_selector('xpath=//*[@placeholder="Ops ID"]', timeout=15000)
             await page.locator('xpath=//*[@placeholder="Ops ID"]').fill('Ops101635')
-            await page.locator('xpath=//*[@placeholder="Senha"]').fill('@Shopee123')
+            await page.locator('xpath=//*[@placeholder="Senha"]').fill('Spx@1234')
             await page.locator('xpath=/html/body/div[1]/div/div[2]/div/div/div[1]/div[3]/form/div/div/button').click()
             await page.wait_for_timeout(15000)
             try:
