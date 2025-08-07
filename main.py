@@ -61,8 +61,8 @@ def update_packing_google_sheets(csv_file_path):
         scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
         creds = ServiceAccountCredentials.from_json_keyfile_name("hxh.json", scope)
         client = gspread.authorize(creds)
-        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1R-ESlth3_RhDf5iiS3MJ4ZgQBcqaC4X6aesLByvxnTw/edit?gid=1863419505#gid=1863419505")
-        worksheet1 = sheet1.worksheet("prod")
+        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1pypLtrl46-UJHITdAh9C094olLyZO7qfyteol1CkoSo/edit?gid=2070313766#gid=2070313766")
+        worksheet1 = sheet1.worksheet("PROD")
         df = pd.read_csv(csv_file_path)
         df = df.fillna("")
         worksheet1.clear()
@@ -80,8 +80,8 @@ def update_packing_google_sheets2(csv_file_path2):
         scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
         creds = ServiceAccountCredentials.from_json_keyfile_name("hxh.json", scope)
         client = gspread.authorize(creds)
-        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1R-ESlth3_RhDf5iiS3MJ4ZgQBcqaC4X6aesLByvxnTw/edit?gid=1863419505#gid=1863419505")
-        worksheet1 = sheet1.worksheet("workstation")
+        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1pypLtrl46-UJHITdAh9C094olLyZO7qfyteol1CkoSo/edit?gid=2070313766#gid=2070313766")
+        worksheet1 = sheet1.worksheet("WS SP7")
         df = pd.read_csv(csv_file_path2)
         df = df.fillna("")
         worksheet1.clear()
@@ -99,8 +99,8 @@ def update_packing_google_sheets3(csv_file_path3):
         scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
         creds = ServiceAccountCredentials.from_json_keyfile_name("hxh.json", scope)
         client = gspread.authorize(creds)
-        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1R-ESlth3_RhDf5iiS3MJ4ZgQBcqaC4X6aesLByvxnTw/edit?gid=1863419505#gid=1863419505")
-        worksheet1 = sheet1.worksheet("inbound")
+        sheet1 = client.open_by_url("https://docs.google.com/spreadsheets/d/1pypLtrl46-UJHITdAh9C094olLyZO7qfyteol1CkoSo/edit?gid=2070313766#gid=2070313766")
+        worksheet1 = sheet1.worksheet("INBOUND")
         df = pd.read_csv(csv_file_path3)
         df = df.fillna("")
         worksheet1.clear()
@@ -120,8 +120,8 @@ async def main():
             # LOGIN
             await page.goto("https://spx.shopee.com.br/")
             await page.wait_for_selector('xpath=//*[@placeholder="Ops ID"]', timeout=15000)
-            await page.locator('xpath=//*[@placeholder="Ops ID"]').fill('Ops101635')
-            await page.locator('xpath=//*[@placeholder="Senha"]').fill('Spx@1234')
+            await page.locator('xpath=//*[@placeholder="Ops ID"]').fill('Ops105579')
+            await page.locator('xpath=//*[@placeholder="Senha"]').fill('@Shopee123')
             await page.locator('xpath=/html/body/div[1]/div/div[2]/div/div/div[1]/div[3]/form/div/div/button').click()
             await page.wait_for_timeout(15000)
             try:
